@@ -11,8 +11,10 @@ const SendMoney = () => {
   const [user, setUser] = useState<any>(null);
   const [userName, setUserName] = useState<string>("");
   const navigate = useNavigate();
+  const [success, setSuccess] = useState(false);
+
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  // const [error, setError] = useState(false);
   const [receiver, setReceiver] = useState({
     name: "",
     bank: "",
@@ -28,16 +30,28 @@ const SendMoney = () => {
     setReceiver({ ...receiver, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setLoading(true);
 
-    // Simulate processing delay
-    setTimeout(() => {
-      setLoading(false);
-      setError(true); // Simulating a transaction failure
-    }, 3000);
-  };
+  //   // Simulate processing delay
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //     setError(true); // Simulating a transaction failure
+  //   }, 3000);
+  // };
+
+
+
+  const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
+
+  setTimeout(() => {
+    setLoading(false);
+    setSuccess(true); // Transaction successful
+  }, 3000);
+};
 
 
   
@@ -228,7 +242,7 @@ const SendMoney = () => {
                 <div className="text-white text-xl font-medium animate-pulse"><img src={log} alt="" /></div>
               </div>
             )}
-      
+{/*       
            {error && (
   <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
     <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm">
@@ -241,11 +255,7 @@ const SendMoney = () => {
 please contact support 
 
 </p>
- {/* <Link to="/error">
-          <button className="w-full mb-6 mt-6 px-4 py-2 bg-gray-200 text-red-800 rounded-lg hover:bg-gray-300 transition">
-            Read More
-          </button>
-        </Link> */}
+
       <div className="mt-4 space-y-2">
         <button
           onClick={() => setError(false)}
@@ -258,7 +268,32 @@ please contact support
       </div>
     </div>
   </div>
+)} */}
+
+{success && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm">
+      <h2 className="text-lg font-semibold text-green-600">Transaction Successful</h2>
+
+      <p className="text-gray-600 mt-2">Your transfer has been completed.</p>
+
+      <div className="mt-4">
+        <button
+          onClick={() => {
+            setSuccess(false);
+            navigate("/dashboard"); // or wherever you want
+          }}
+          className="w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+        >
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
 )}
+
+
+
           </div>
 
       <BottomNav />
