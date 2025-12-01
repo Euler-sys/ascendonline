@@ -14,7 +14,7 @@ const SendMoney = () => {
   const [success, setSuccess] = useState(false);
 
   const [loading, setLoading] = useState(false);
-  // const [error, setError] = useState(false);
+  const [error, setError] = useState(false);
   const [receiver, setReceiver] = useState({
     name: "",
     bank: "",
@@ -30,28 +30,33 @@ const SendMoney = () => {
     setReceiver({ ...receiver, [e.target.name]: e.target.value });
   };
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   setLoading(true);
-
-  //   // Simulate processing delay
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //     setError(true); // Simulating a transaction failure
-  //   }, 3000);
-  // };
 
 
 
-  const handleSubmit = (e: React.FormEvent) => {
+const handleSubmit = (e: React.FormEvent) => {
   e.preventDefault();
+
+  // get transaction count from localStorage
+  const count = Number(localStorage.getItem("transferCount") || 0);
+
+  // if attempts already reached 3 → block transfer
+  if (count >= 3) {
+    setError(true);
+    return;
+  }
+
   setLoading(true);
 
   setTimeout(() => {
     setLoading(false);
-    setSuccess(true); // Transaction successful
+    setSuccess(true);
+
+    // increase attempt count
+    localStorage.setItem("transferCount", String(count + 1));
+
   }, 3000);
 };
+
 
 
   
@@ -242,7 +247,7 @@ const SendMoney = () => {
                 <div className="text-white text-xl font-medium animate-pulse"><img src={log} alt="" /></div>
               </div>
             )}
-{/*       
+      
            {error && (
   <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
     <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm">
@@ -268,7 +273,7 @@ please contact support
       </div>
     </div>
   </div>
-)} */}
+)}
 
 {success && (
   <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
