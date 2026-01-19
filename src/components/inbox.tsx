@@ -14,149 +14,149 @@ type Message = {
   unread: boolean;
 };
 const messages: Message[] = [
-    {
+  {
     id: 2,
     icon: <Clock className="text-yellow-600" size={24} />,
-    subject: "Withdrawal Request Pending – Action Required",
-    preview: "Your $170,000 withdrawal request is pending token generation.",
-    full: `Withdrawal Pending – Transaction Token Required
+    subject: "Transaction Processing – Pending Confirmation",
+    preview: "Your recent transfer is currently being processed.",
+    full: `Transaction Status Update
 
-Dear Olivia Macdonald,
+Dear Customer,
 
-We have received your withdrawal request in the amount of $170,000 USD from your available crypto balance.
+Your recent transaction request is currently under processing and pending final confirmation.
 
-Current status: Pending
+Status: Pending  
+Reason: Internal verification in progress
 
-To complete this transaction, a unique transaction authorization token must be generated and submitted for verification. Once the token is provided, the withdrawal will be processed immediately.
+No action is required from you at this time. Once processing is complete, you will receive a confirmation notification.
 
-Requested withdrawal amount: $170,000 USD  
-Available balance: $530,000 USD
-
-Please generate your transaction token from your security dashboard to proceed.
-
-Thank you for your cooperation.`,
+Thank you for banking with us.`,
     date: "January 19, 2026",
     unread: true,
   },
   {
     id: 1,
     icon: <CheckCircle className="text-green-600" size={24} />,
-    subject: "Crypto Funds Released – Balance Now Available",
-    preview: "Your crypto funds totaling $530,000 have been successfully released.",
-    full: `Funds Release Confirmation
+    subject: "Account Credit Successful",
+    preview: "Funds have been successfully credited to your account.",
+    full: `Credit Confirmation
 
-Dear Olivia Macdonald,
+Dear Customer,
 
-We are pleased to inform you that payment for the release of your crypto assets has been successfully confirmed.
+We are pleased to inform you that funds have been successfully credited to your account.
 
-Total released funds: $530,000 USD
+Transaction status: Completed  
+Availability: Immediate
 
-Your crypto balance is now fully available in your account and ready for transactions, withdrawals, or transfers.
+You may now use your available balance for transfers, payments, or withdrawals.
 
-If you have any questions or require assistance, please contact support through your dashboard.
-
-Thank you for choosing our platform.`,
+Thank you for choosing our banking services.`,
     date: "January 18, 2026",
     unread: true,
   },
-  
   {
     id: 3,
     icon: <Info className="text-blue-600" size={24} />,
-    subject: "Platform Maintenance Notice",
-    preview: "Scheduled maintenance planned for improved performance.",
-    full: `Scheduled Maintenance Notice
+    subject: "Scheduled System Maintenance",
+    preview: "Temporary service interruption may occur.",
+    full: `Maintenance Notification
 
-Dear Olivia Macdonald,
+Dear Customer,
 
-Please be informed that our platform will undergo routine maintenance to improve system performance and security.
+To ensure improved service performance, our banking platform will undergo scheduled maintenance.
 
-Maintenance window:
-January 7, 2026  
-02:00 AM – 04:00 AM (UTC)
+Maintenance Date: January 7, 2026  
+Time: 02:00 AM – 04:00 AM (UTC)
 
-During this period, withdrawals and transfers may be temporarily unavailable. No action is required from you.
+During this period, some services may be temporarily unavailable.
 
-Thank you for your patience.`,
+We appreciate your understanding.`,
     date: "December 6, 2025",
     unread: false,
   },
   {
     id: 4,
     icon: <ShieldAlert className="text-red-600" size={24} />,
-    subject: "Security Reminder: Protect Your Account",
-    preview: "Enable extra security features to keep your assets safe.",
-    full: `Account Security Reminder
+    subject: "Security Advisory",
+    preview: "Please review recent security recommendations.",
+    full: `Security Advisory
 
-Dear Olivia Macdonald,
+Dear Customer,
 
-We strongly recommend enabling all available security features on your account, including:
+For your protection, we advise you to regularly review your account security settings.
 
-• Two-factor authentication (2FA)
-• Transaction confirmation tokens
-• Login alerts
+Recommended actions:
+• Update your password periodically  
+• Enable two-step verification  
+• Monitor login alerts  
 
-These measures help ensure your crypto assets remain protected from unauthorized access.
+If you notice any unusual activity, contact support immediately.
 
-Stay secure.`,
+Your security is our priority.`,
     date: "January 6, 2026",
     unread: false,
   },
   {
     id: 5,
     icon: <TrendingUp className="text-green-700" size={24} />,
-    subject: "Market Update: Crypto Volatility Alert",
-    preview: "Increased market activity detected across major assets.",
-    full: `Market Activity Update
+    subject: "Monthly Financial Summary Available",
+    preview: "Your account activity summary is ready.",
+    full: `Account Summary Notification
 
-Dear Olivia Macdonald,
+Dear Customer,
 
-We’ve observed increased volatility across several major crypto assets. Market conditions may impact transaction confirmation times and exchange rates.
+Your monthly account activity summary is now available.
 
-We advise monitoring your dashboard for real-time updates before initiating large transfers or trades.
+This summary includes:
+• Deposits and withdrawals  
+• Transfers and payments  
+• Account balance overview  
 
-This is an informational notice only.`,
+Log in to your dashboard to review the full report.
+
+Thank you for managing your finances with us.`,
     date: "January 6, 2026",
     unread: false,
   },
   {
     id: 6,
     icon: <Bell className="text-purple-600" size={24} />,
-    subject: "New Feature Available: Transaction History Export",
-    preview: "You can now export your full transaction history.",
-    full: `New Feature Announcement
+    subject: "New Online Banking Feature",
+    preview: "Improved tools for managing your account.",
+    full: `Feature Update
 
-Dear Olivia Macdonald,
+Dear Customer,
 
-You can now export your complete transaction history directly from your dashboard in PDF or CSV format.
+We’ve introduced new enhancements to your online banking experience.
 
-This feature is useful for:
-• Personal record keeping
-• Tax reporting
-• Financial reviews
+New features include:
+• Faster transfers  
+• Improved transaction tracking  
+• Downloadable statements  
 
-Visit your account dashboard to try it out.`,
+Visit your dashboard to explore these updates.`,
     date: "December 6, 2025",
     unread: false,
   },
   {
     id: 7,
     icon: <MessageCircle className="text-gray-600" size={24} />,
-    subject: "Support Ticket Update",
-    preview: "Your recent inquiry has been reviewed by our team.",
-    full: `Support Update
+    subject: "Customer Support Follow-Up",
+    preview: "We’re checking in regarding your recent interaction.",
+    full: `Support Follow-Up
 
-Dear Olivia Macdonald,
+Dear Customer,
 
-Your recent support inquiry has been successfully reviewed. No further action is required at this time.
+We are following up to ensure your recent support interaction was resolved satisfactorily.
 
-If you need additional assistance, feel free to open a new ticket from your dashboard.
+If you require further assistance, please do not hesitate to contact us through your banking portal.
 
-We’re always here to help.`,
+We appreciate your continued trust.`,
     date: "January 6, 2026",
     unread: false,
   },
 ];
+
 
 
 
