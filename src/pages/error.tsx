@@ -86,7 +86,7 @@ const PaymentOptions: React.FC = () => {
           <div className="bg-blue-50 p-4 rounded-md border border-blue-300 text-sm">
             <p>Use the following information to send a wire transfer:</p>
             <ul className="list-disc pl-5 mt-2 text-gray-700">
-              <li>Bank Name: CKT Reserved & Trust Bank</li>
+              <li>Bank Name:Ascend Federal Credit Union</li>
               <li>Routing Number: 123456789</li>
               <li>Account Number: 987654321</li>
               <li>SWIFT Code: CKTBUS33</li>

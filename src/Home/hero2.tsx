@@ -11,7 +11,7 @@ const HeroSection = () => {
             NOW UP TO 4X <br /> REWARDS — <br /> EVERYDAY!
           </h1>
          <p className="text-gray-700 mb-6 text-base lg:text-lg">
-  The CKT Reserved & Trust Bank Visa Credit Card just got even better! Earn{" "}
+  The Ascend Federal Credit Union Visa Credit Card just got even better! Earn{" "}
   <strong>4X points</strong> on entertainment, travel, and wholesale clubs;{" "}
   <strong>3X points</strong> on dining, gas, and groceries; and{" "}
   <strong>2X points</strong> on everything else. Enjoy perks like Amazon Prime

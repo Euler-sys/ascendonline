@@ -132,7 +132,7 @@ const LoginForm: React.FC = () => {
     <img
       src={lol} // replace with your actual image path
       alt="Loading illustration"
-      className="w-'200px h-32 object-contain mb-4"
+      className="w-[200px] h-32 object-contain mb-4"
     />
     
     <div className="flex items-center space-x-2">
@@ -145,7 +145,7 @@ const LoginForm: React.FC = () => {
       ) : (
         <div className="flex z-10 w-full  justify-center items-center min-h-screen p-4">
           <div className="  rounded p-8 w-full max-w-md">
-            <img src={logo} alt=""  width={500} className="m-auto mb-3"/>
+            <img src={logo} alt=""  width={100} className="m-auto mb-3"/>
             
             
 

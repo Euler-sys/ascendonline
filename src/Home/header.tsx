@@ -13,7 +13,7 @@ const Header: React.FC = () => {
         {/* Left: Logo + FDC Image */}
         <div className="flex flex-col space-x-4">
           <Link to="/">
-            <img src={logo} alt="Logo" className=" w-[300px]" />
+            <img src={logo} alt="Logo" className=" w-[100px]" />
           </Link>
          
         </div>
