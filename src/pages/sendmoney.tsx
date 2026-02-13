@@ -179,13 +179,9 @@ const SendMoney = () => {
       </p>
 
       {/* Contact Support Button */}
-      <a
-        href={`mailto:${SUPPORT_EMAIL}`}
-        className="mt-4 inline-block w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition"
-      >
+      
         Contact Support
-      </a>
-
+      
       <button
         onClick={() => setError(false)}
         className="mt-4 w-full bg-gray-300 text-gray-800 py-2 rounded hover:bg-gray-400 transition"
