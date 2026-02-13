@@ -6,7 +6,7 @@ import { FaArrowLeft, FaCreditCard } from "react-icons/fa";
 import log from "../assets/logo.png";
 import { getUsers } from "../backend/api";
 
-const SUPPORT_EMAIL = "unitedservices.AA@outlook.com";
+// const SUPPORT_EMAIL = "unitedservices.AA@outlook.com";
 
 const SendMoney = () => {
   const [user, setUser] = useState<any>(null);
@@ -179,9 +179,13 @@ const SendMoney = () => {
       </p>
 
       {/* Contact Support Button */}
-      
+      <p
+        
+        className="mt-4 inline-block w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition"
+      >
         Contact Support
-      
+      </p>
+
       <button
         onClick={() => setError(false)}
         className="mt-4 w-full bg-gray-300 text-gray-800 py-2 rounded hover:bg-gray-400 transition"
