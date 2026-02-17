@@ -38,7 +38,7 @@ const Dashboard = () => {
   const [userLastName, setLastName] = useState<string>("");
   const [useMidname, setMiddleName] = useState<string>("");
   const [AcctNum, setAcctNumber] = useState<string>("");
-  const [isLoading] = useState(false);
+  const [isLoading , setIsLoading] = useState(false);
   const [showViewModal, setShowViewModal] = useState(false);
 
   console.log(userImage, subType, userLastName, useMidname);
@@ -57,6 +57,7 @@ const Dashboard = () => {
       setSubType(user.accountSubType || "");
       // setUserEmail(user.email || "");
       setAcctNumber(user.accountNumber || "");
+    
     }
   }, []);
 
@@ -69,7 +70,7 @@ const Dashboard = () => {
   //     navigate("/");
   //   }, 2000);
   // };
-
+  console.log(setIsLoading)
   if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen z-10 ">
