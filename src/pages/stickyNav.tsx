@@ -71,7 +71,7 @@ const BottomNav: React.FC = () => {
         <div className="h-full flex flex-col justify-between">
           {/* Top Content */}
           <div>
-            {/* Logo or Title */}
+           
             <div className="px-6 pt-10 pb-6 border-b border-gray-200">
               <img src="" alt="" />
             </div>

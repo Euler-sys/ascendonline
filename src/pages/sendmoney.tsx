@@ -178,7 +178,6 @@ const SendMoney = () => {
       Please contact customer support to proceed.
     </p>
 
-    {/* Contact Support Button */}
     <a
       href="mailto:Ascendonline1@outlook.com?subject=Transaction%20Verification%20Required"
       className="mt-4 inline-block w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition"
