@@ -95,7 +95,7 @@ const BottomNav: React.FC = () => {
                   Account Number: {AcctNum}
                 </p>
                 <p className="text-[13px] font-semibold">
-                  Routine Number: 233293939
+                  Routine Number: 264181626
                 </p>
               </div>
             </div>
