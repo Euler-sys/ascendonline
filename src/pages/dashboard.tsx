@@ -1,16 +1,7 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FaArrowAltCircleRight, FaSearch } from "react-icons/fa";
-import {
-  // FaSyncAlt,
-  // FaEye,
-  // FaEyeSlash,
-  // FaArrowUp,
-  FaSignOutAlt,
-  // FaShoppingBasket,
-  FaShoppingCart,
-  FaEnvelope,
-} from "react-icons/fa";
+
 // import {
 //   FaUniversity,
 //   FaExchangeAlt,
@@ -19,7 +10,7 @@ import {
 
 // } from 'react-icons/fa';
 import lol from "../assets/logo.png";
-import {  FaArrowUpRightFromSquare } from "react-icons/fa6";
+// import {  FaArrowUpRightFromSquare } from "react-icons/fa6";
 // import bg from "../assets/her2.jpg"; // your uploaded image
 // import StatComponent from "../components/stats";
 // import BottomNav from "./stickyNav";
@@ -69,15 +60,15 @@ const Dashboard = () => {
     }
   }, []);
 
-  const handleLogout = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      localStorage.clear();
-      sessionStorage.clear();
-      setIsLoading(false);
-      navigate("/");
-    }, 2000);
-  };
+  // const handleLogout = () => {
+  //   setIsLoading(true);
+  //   setTimeout(() => {
+  //     localStorage.clear();
+  //     sessionStorage.clear();
+  //     setIsLoading(false);
+  //     navigate("/");
+  //   }, 2000);
+  // };
 
   if (isLoading) {
     return (
@@ -100,53 +91,200 @@ const Dashboard = () => {
 
   return (
     <>
+<div
+      className="
+        w-[90%] 
+        m-auto 
+        p-4 
+        rounded-xl 
+        relative 
+        overflow-hidden
+        bg-gradient-to-r from-white via-red-200 to-white
+      "
+    >
+
+      
+      {/* Top Red Header */}
+      <div className="h-14 bg-[#C8102E] w-full"></div>
+
+      <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        <div className="space-y-6">
+
+         <div className="bg-white border border-[#E6E8EC] rounded-lg p-5 flex items-center justify-between">
+  <div className="flex items-center gap-3">
+    <div className="w-9 h-9 bg-[#F3F4F6] rounded-full flex items-center justify-center">
+      {/* User Icon */}
+      <svg className="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 12c2.761 0 5-2.239 5-5S14.761 2 12 2 7 4.239 7 7s2.239 5 5 5z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4 22c0-4 4-6 8-6s8 2 8 6" />
+      </svg>
+    </div>
+    <h1 className="text-xl font-semibold text-[#2F2F2F]">Dashboard</h1>
+  </div>
+
+  {/* Pencil icon */}
+  <svg className="w-5 h-5 text-[#9CA3AF] cursor-pointer" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6 6M4 20l4-1 9-9-3-3-9 9-1 4z" />
+  </svg>
+</div>
+
+
+        <div className="bg-transparent  border-[#E6E8EC] rounded-lg p-5">
+  
+  <div className="flex gap-2 items-center mb-6">
+    <h2 className="text-xl font-semibold text-[#2F2F2F]">
+      Cash Accounts
+    </h2>
+    <span className="text-sm text-[#6B7280]">
+      {new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(userAmount)}
+    </span>
+  </div>
+
+  {/* Savings */}
+  <div className="bg-[#F8F9FB] border border-[#ECEEF2] rounded-md p-4 mb-4">
+    <p className="text-sm text-[#6B7280]">Savings • *0000</p>
+    <h3 className="text-2xl font-semibold text-[#2F2F2F]">$0.00</h3>
+    <p className="text-sm text-[#6B7280]">Available</p>
+  </div>
+
+  {/* Checking */}
+  <div className="bg-[#F8F9FB] border border-[#ECEEF2] rounded-md p-4">
+    <p className="text-sm text-[#6B7280]">Basic Checking • *0007</p>
+    <h3 className="text-2xl font-semibold text-[#2F2F2F]">
+      {new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(userAmount)}
+    </h3>
+    <p className="text-sm text-[#6B7280]">Available</p>
+  </div>
+
+</div>
+
+
+          {/* Loans & Credit */}
+          <div className="bg-white border border-[#E5E7EB] rounded-xl p-5">
+            <div className="flex justify-between items-center mb-5">
+              <h2 className="font-semibold text-[#2F2F2F]">
+                Loans & Credit
+              </h2>
+              <span className="text-sm text-[#6B7280]">
+                $13,159.95
+              </span>
+            </div>
+
+            <div className="bg-[#F7F8FA] border border-[#E5E7EB] rounded-lg p-4">
+              <p className="text-sm text-[#6B7280]">
+                2015 Toyota Prius • *0001
+              </p>
+              <h3 className="text-2xl font-semibold text-[#2F2F2F]">
+                $13,159.95
+              </h3>
+              <p className="text-sm text-[#6B7280]">
+                Remaining Balance
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        {/* RIGHT COLUMN */}
+        <div className="lg:col-span-2 space-y-6">
+
+          {/* Scholarship Card */}
+          <div className="bg-white border border-[#E5E7EB] rounded-xl overflow-hidden">
+            <div className="h-32 bg-[#DCEFFD] flex items-center justify-center">
+              <p className="text-[#2F2F2F] font-medium">
+                Member Scholarship Deadline Approaching
+              </p>
+            </div>
+            <div className="p-5">
+              <p className="text-sm text-[#6B7280]">
+                Apply by Feb. 27 for a chance to receive
+                $2,500 scholarships for the upcoming school year.
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            {/* Recent Transactions */}
+            <div className="bg-white border border-[#E5E7EB] rounded-xl p-5">
+              <h2 className="font-semibold text-[#2F2F2F] mb-4">
+                Recent Transactions
+              </h2>
+
+              <div className="space-y-4 text-sm">
+                <div className="flex justify-between">
+                  <div>
+                    <p className="font-medium text-[#2F2F2F]">
+                      Withdrawal Transaction fee
+                    </p>
+                    <p className="text-[#6B7280]">
+                      Basic Checking
+                    </p>
+                  </div>
+                  <span className="text-[#DC2626] font-medium">
+                    -$5.00
+                  </span>
+                </div>
+
+                <div className="border-t border-[#E5E7EB] pt-4 flex justify-between">
+                  <div>
+                    <p className="font-medium text-[#2F2F2F]">
+                      Deposit by Wire 0000095372
+                    </p>
+                    <p className="text-[#6B7280]">
+                      Basic Checking
+                    </p>
+                  </div>
+                  <span className="text-[#16A34A] font-medium">
+                    +$10,000.00
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Cash Flow */}
+            <div className="bg-white border border-[#E5E7EB] rounded-xl p-5">
+              <h2 className="font-semibold text-[#2F2F2F] mb-4">
+                Cash Flow
+              </h2>
+
+              <p className="text-sm text-[#6B7280]">
+                Deposit Accounts Net
+              </p>
+
+              <h3 className="text-2xl font-semibold text-[#2F2F2F] mb-4">
+               
+          {new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD",
+          }).format(userAmount)}
+        
+              </h3>
+
+              <div className="w-full bg-[#E5E7EB] h-3 rounded-full">
+                <div className="bg-[#16A34A] h-3 rounded-full w-3/4"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
       <div className=" flex flex-col ">
         <div className="bg-white relative mb-8">
           {/* Top Navigation */}
-          <div className="flex justify-between items-center px-4 py-2 border-b">
-            {/* Hamburger */}
-            <div className="flex flex-col items-center cursor-pointer">
-              {/* <FaBars className="text-xl" /> */}
-              <span className="text-[10px] text-gray-600">Menu</span>
-            </div>
+       
 
-            {/* Top Right Icons */}
-            <div className="flex gap-5 text-gray-500 text-xl items-center">
-              {/* Inbox */}
-              <Link to="/inbox">
-                <div className="relative flex flex-col items-center cursor-pointer hover:text-black">
-                  <FaEnvelope />
-                  <span className="absolute -top-1 right-0 bg-red-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
-                    3
-                  </span>
-                  <span className="text-[10px] mt-1">Inbox</span>
-                </div>
-              </Link>
-              {/* Products */}
-              <div className="flex flex-col items-center cursor-pointer hover:text-black">
-                <FaShoppingCart />
-                <span className="text-[10px] mt-1">Products</span>
-              </div>
-              {/* Log Out */}
-              <div className="flex flex-col items-center cursor-pointer hover:text-black">
-                <FaSignOutAlt />
-                <span className="text-[10px] mt-1" onClick={handleLogout}>
-                  Log Out
-                </span>
-              </div>
-            </div>
-          </div>
 
-          {/* Navigation Tabs */}
-          <div className="flex justify-center border-b px-4">
-            <div></div>
-            <div className="text-red-700 text-center border-b-2 border-red-700  m-auto font-medium  py-2 px-4 text-[15px]">
-              Accounts
-            </div>
-            <div className="text-gray-500 text-center m-auto py-2 px-4 text-[15px]">
-              Dashboard
-            </div>
-          </div>
 
           {/* Search Bar */}
           <div className="px-4 mt-4">
@@ -164,98 +302,7 @@ const Dashboard = () => {
         </div>
 
         <hr />
-<div
-      className="
-        w-[90%] 
-        m-auto 
-        p-4 
-        rounded-xl 
-        relative 
-        overflow-hidden
-        bg-gradient-to-r from-white via-red-200 to-white
-      "
-    >
-      {/* Header */}
-      <p className="text-2xl font-semibold text-black mb-4">
-        Cash Accounts{" "}
-        <span className="text-sm font-medium">
-          {new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency: "USD",
-          }).format(userAmount)}
-        </span>
-      </p>
 
-      {/* Savings Card */}
-      <div
-        className="
-          w-[90%] 
-          max-w-sm 
-          p-5 
-          rounded-xl 
-          relative 
-          overflow-hidden 
-          shadow-lg 
-          mx-auto 
-          mb-4
-          bg-gradient-to-r from-white via-red-100 to-white
-        "
-      >
-        <div className="relative z-10 p-4 h-full w-full flex flex-col justify-between">
-          <div>
-            <p className="text-sm text-black">
-              Savings *0000
-            </p>
-            <p className="text-2xl text-black font-bold">
-              $0.00{" "}
-              <span className="text-sm font-semibold text-gray-600">
-                Available
-              </span>
-            </p>
-          </div>
-
-          <div className="absolute top-2 right-2">
-            <FaArrowUpRightFromSquare className="text-black text-lg" />
-          </div>
-        </div>
-      </div>
-
-      {/* Checking Card */}
-      <div
-        className="
-          w-[90%] 
-          max-w-sm 
-          p-5 
-          rounded-xl 
-          relative 
-          overflow-hidden 
-          shadow-lg 
-          mx-auto
-          bg-gradient-to-r from-white via-red-100 to-white
-        "
-      >
-        <div className="relative z-10 p-4 h-full w-full flex flex-col justify-between">
-          <div>
-            <p className="text-sm text-black">
-              Basic Checking *0007
-            </p>
-            <p className="text-2xl text-black font-bold">
-              {new Intl.NumberFormat("en-US", {
-                style: "currency",
-                currency: "USD",
-              }).format(userAmount)}{" "}
-              <span className="text-sm font-semibold text-gray-600">
-                Available
-              </span>
-            </p>
-          </div>
-
-          <div className="absolute top-2 right-2">
-            <FaArrowUpRightFromSquare className="text-black text-lg" />
-          </div>
-        </div>
-      </div>
-    </div>
 
         <div className="grid grid-cols-2 gap-2 p-2 lg:flex lg:flex-wrap lg:gap-3">
           <button
