@@ -60,7 +60,6 @@ const BottomNav: React.FC = () => {
           isOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-500 ease-in-out`}
       >
-        {/* Close Button */}
         <button
           className="absolute top-4 right-4 text-gray-600 hover:text-red-500"
           onClick={() => setIsOpen(false)}
