@@ -230,6 +230,9 @@ const Dashboard = () => {
               <h2 className="font-semibold text-[#2F2F2F] mb-4">
                 Recent Transactions
               </h2>
+              <div  className="space-y-4 mb-3 bg-gray-200 w-full p-2">
+               Friday, Feb 06
+              </div>
 
               <div className="space-y-4 text-sm">
                 <div className="flex justify-between">
