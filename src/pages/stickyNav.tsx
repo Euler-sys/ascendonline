@@ -55,7 +55,6 @@ const BottomNav: React.FC = () => {
         </button>
       )}
 
-      {/* Sidebar Drawer */}
       <div
         className={`fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 shadow-lg z-40 transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"

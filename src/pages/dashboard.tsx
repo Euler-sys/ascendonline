@@ -473,8 +473,7 @@ const Dashboard = () => {
                       })}
                     </strong>
                   </p>
-                  {/* <p>Last Deposit Date: <strong>July 19, 2025</strong></p> */}
-                  <p>
+                     <p>
                     Deposit Reference Number: <strong>2234-WN7823490</strong>
                   </p>
                   <p className="text-green-600 font-semibold mt-2">
