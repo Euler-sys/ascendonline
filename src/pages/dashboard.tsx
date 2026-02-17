@@ -38,7 +38,7 @@ const Dashboard = () => {
   const [userLastName, setLastName] = useState<string>("");
   const [useMidname, setMiddleName] = useState<string>("");
   const [AcctNum, setAcctNumber] = useState<string>("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading] = useState(false);
   const [showViewModal, setShowViewModal] = useState(false);
 
   console.log(userImage, subType, userLastName, useMidname);
