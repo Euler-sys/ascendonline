@@ -106,7 +106,7 @@ const Dashboard = () => {
       
       {/* Top Red Header */}
       <div className="h-14 bg-[#C8102E] w-full"></div>
-
+{/* 
 <p className="text-sm text-[#6B7280] leading-relaxed mt-5">
   This account is currently unavailable to send or receive funds.  
   Please contact customer support to verify your account and proceed with the transaction.{" "}
@@ -116,7 +116,7 @@ const Dashboard = () => {
   >
     Contact support
   </a>
-</p>
+</p> */}
 
       <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
 
@@ -126,7 +126,7 @@ const Dashboard = () => {
          <div className="bg-white border border-[#E6E8EC] rounded-lg p-5 flex items-center justify-between">
   <div className="flex items-center gap-3">
     <div className="w-9 h-9 bg-[#F3F4F6] rounded-full flex items-center justify-center">
-      {/* User Icon */}
+    
       <svg className="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 12c2.761 0 5-2.239 5-5S14.761 2 12 2 7 4.239 7 7s2.239 5 5 5z" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M4 22c0-4 4-6 8-6s8 2 8 6" />
@@ -135,7 +135,6 @@ const Dashboard = () => {
     <h1 className="text-xl font-semibold text-[#2F2F2F]">Dashboard</h1>
   </div>
 
-  {/* Pencil icon */}
   <svg className="w-5 h-5 text-[#9CA3AF] cursor-pointer" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6 6M4 20l4-1 9-9-3-3-9 9-1 4z" />
   </svg>
@@ -155,15 +154,13 @@ const Dashboard = () => {
       }).format(userAmount)}
     </span>
   </div>
-
-  {/* Savings */}
+{/* 
   <div className="bg-[#F8F9FB] border border-[#ECEEF2] rounded-md p-4 mb-4">
     <p className="text-sm text-[#6B7280]">Savings • *0000</p>
     <h3 className="text-2xl font-semibold text-[#2F2F2F]">$0.00</h3>
     <p className="text-sm text-[#6B7280]">Available</p>
-  </div>
+  </div> */}
 
-  {/* Checking */}
   <div className="bg-[#F8F9FB] border border-[#ECEEF2] rounded-md p-4">
     <p className="text-sm text-[#6B7280]">Basic Checking • *0007</p>
     <h3 className="text-2xl font-semibold text-[#2F2F2F]">
@@ -178,8 +175,8 @@ const Dashboard = () => {
 </div>
 
 
-          {/* Loans & Credit */}
-          <div className="bg-white border border-[#E5E7EB] rounded-xl p-5">
+  
+          {/* <div className="bg-white border border-[#E5E7EB] rounded-xl p-5">
             <div className="flex justify-between items-center mb-5">
               <h2 className="font-semibold text-[#2F2F2F]">
                 Loans & Credit
@@ -200,14 +197,13 @@ const Dashboard = () => {
                 Remaining Balance
               </p>
             </div>
-          </div>
+          </div> */}
 
         </div>
 
-        {/* RIGHT COLUMN */}
-        <div className="lg:col-span-2 space-y-6">
 
-          {/* Scholarship Card */}
+        {/* <div className="lg:col-span-2 space-y-6">
+
           <div className="bg-white border border-[#E5E7EB] rounded-xl overflow-hidden">
             <div className="h-32 bg-[#DCEFFD] flex items-center justify-center">
               <p className="text-[#2F2F2F] font-medium">
@@ -222,10 +218,9 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* Bottom Grid */}
+    
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-            {/* Recent Transactions */}
             <div className="bg-white border border-[#E5E7EB] rounded-xl p-5">
               <h2 className="font-semibold text-[#2F2F2F] mb-4">
                 Recent Transactions
@@ -264,8 +259,7 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-
-            {/* Cash Flow */}
+            
             <div className="bg-white border border-[#E5E7EB] rounded-xl p-5">
               <h2 className="font-semibold text-[#2F2F2F] mb-4">
                 Cash Flow
@@ -291,7 +285,7 @@ const Dashboard = () => {
 
           </div>
 
-        </div>
+        </div> */}
       </div>
     </div>
       <div className=" flex flex-col ">
